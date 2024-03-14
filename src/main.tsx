@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import MasterLayout from './shared/Layouts/MasterLayout.tsx'
 import Landing from './components/Landing.tsx'
 import Cases from './components/Cases.tsx'
+import CaseDescription from './components/CaseDescription.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <Router>
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <Route path="/" element={<MasterLayout></MasterLayout>} >
         <Route path='home' element={<Landing></Landing>}></Route>
         <Route path='Cases' element={<Cases></Cases>}></Route>
+        <Route path='Cases/:id' element={<CaseDescription></CaseDescription>}></Route>
       </Route>
 
     </Routes>

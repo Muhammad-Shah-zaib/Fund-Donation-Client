@@ -1,6 +1,16 @@
+import { useNavigate } from "react-router-dom";
 
 export default function Cases() {
+    // using router hook to navigate programatically
+    const navigate = useNavigate();
+
+
     changeBodyBackground();
+
+    // function to navigate to desired url
+    const MoveToCaseDescription = (id: number) => {
+        navigate("/Cases/" + id);
+    }
 
     return (
         // Container
@@ -28,7 +38,7 @@ export default function Cases() {
                 {/* container of cards with grid */}
                 <div className="py-8 px-20 grid grid-cols-3 gap-4">
                     {/* cards goes here */}
-                    <div className="flex flex-col gap-4 h-[60vh]  shadow-lg shadow-slate-400">
+                    <div onClick={() => MoveToCaseDescription(1)} className="flex flex-col gap-4 h-[60vh] hover:shadow-none transition-shadow duration-300 shadow-lg shadow-slate-400">
 
                         {/* image */}
                         <span className="h-[60%] w-full bg-blue-500">
