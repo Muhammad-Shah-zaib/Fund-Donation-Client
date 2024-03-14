@@ -1,5 +1,8 @@
+import { NavLink, useParams } from "react-router-dom";
 
 export default function CaseDescription() {
+    const params = useParams();
+
     return (
         // Container for the whole page
         <div className='px-20 py-4 w-full'>
@@ -48,7 +51,7 @@ export default function CaseDescription() {
 
                             {/* donate button div */}
                             <div className='w-full flex justify-end'>
-                                <button className='rounded-3xl px-8 py-4 font-bold text-sm text-sky-950 bg-sky-500 hover:bg-sky-700 hover:text-slate-50 hover:shadow-none transition-all duration-300 active:bg-sky-950 shadow-lg shadow-slate-400'>DONATE</button>
+                                <NavLink to={"/Cases/" + params.id + "/Donation"} className='rounded-3xl px-8 py-4 font-bold text-sm text-sky-950 bg-sky-500 hover:bg-sky-700 hover:text-slate-50 hover:shadow-none transition-all duration-300 active:bg-sky-950 shadow-lg shadow-slate-400'>DONATE</NavLink>
                             </div>
 
                         </div>
