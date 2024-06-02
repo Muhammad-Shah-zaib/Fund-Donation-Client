@@ -1,17 +1,23 @@
     import { useEffect, useState } from "react"
     import useDonatorService from "../../CustomHooks/useDonatorService"
 import useCaseService from "../../CustomHooks/useCaseService";
+import useCaseTransactionService from "../../CustomHooks/useCaseTransactionService";
 
     export default function LandingFooter() {
         const [donatorCount, setDonatorCount] = useState<number | null>(null);
         const [resolvedCaseCount, setResolvedCaseCount] = useState<number | null>(null);
+        const [totalDonation, setTotalDonation] = useState<number | null>(null);
+
         // cusom hooks
         const {GetDonatorCount} = useDonatorService();
         const {GetResolvedCaseCount} = useCaseService();
+        const {GetTotalDonation} = useCaseTransactionService();
         useEffect(() => {
             GetDonatorCount(setDonatorCount);
             GetResolvedCaseCount(setResolvedCaseCount);
-        }, [GetDonatorCount, GetResolvedCaseCount])
+            GetTotalDonation(setTotalDonation);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        }, [])
         return (
             <div className="flex justify-center">
 
@@ -99,7 +105,7 @@ import useCaseService from "../../CustomHooks/useCaseService";
 
                         <div className="flex flex-col gap-2 items-center">
                             <p className="text-center text-[#F2902F]">Money Raised So Far</p>
-                            <h3 className="font-black text-5xl text-white text-center">200K</h3>
+                            <h3 className="font-black text-5xl text-white text-center">{totalDonation ? Math.floor(totalDonation / 1000) : 0}K</h3>
                         </div>
                         
 

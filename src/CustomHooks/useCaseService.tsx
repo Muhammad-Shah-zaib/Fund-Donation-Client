@@ -1,10 +1,13 @@
+import { CaseResponseListDto } from "../Models/CaseResponseDto";
 import CaseService from "../Services/CaseService";
 
 
 type TGetResolvedCaseCount = (setResolvedCaseCount: (cc: number) => void) => void;
+type TGetVerifiedCases = (setVerifiedCases: (vc: CaseResponseListDto) => void) => void;
 
 interface ICaseReturn {
     GetResolvedCaseCount: TGetResolvedCaseCount;
+    GetAllVerfiedCases: TGetVerifiedCases;
 }
 
 export default function useCaseService(): ICaseReturn{
@@ -14,10 +17,21 @@ export default function useCaseService(): ICaseReturn{
         _caseService.GetResolvedCaseCount$()
             .subscribe(res => {
                 setResolvedCaseCount(res);
+                console.log("ss");
             }, err => {
                 console.error(err);
                 alert("Something went wrong, please try again later.");
             })
     }
-    return {GetResolvedCaseCount}
+
+    const GetAllVerfiedCases: TGetVerifiedCases = (serVerifiedCases) => {
+        _caseService.GetAllVerifieddCases$()
+            .subscribe(res => {
+                serVerifiedCases(res);
+            }, err => {
+                console.error(err);
+                alert("Something went wrong, please try again later.");
+            })
+    }
+    return {GetResolvedCaseCount, GetAllVerfiedCases}
 }

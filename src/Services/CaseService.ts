@@ -1,5 +1,6 @@
 import { ajax } from "rxjs/ajax";
-import { getResolvedCaseCountUrl } from "../Environment/ServerUrls";
+import { getResolvedCaseCountUrl, getVerifiedCasesUrl } from "../Environment/ServerUrls";
+import { CaseResponseListDto } from "../Models/CaseResponseDto";
 
 export default class CaseService
 {
@@ -8,5 +9,9 @@ export default class CaseService
     {
         return ajax.getJSON<number>(getResolvedCaseCountUrl)
             .pipe();
+    }
+
+    public GetAllVerifieddCases$(){
+        return ajax.getJSON<CaseResponseListDto>(getVerifiedCasesUrl)
     }
 }
