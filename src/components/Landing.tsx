@@ -28,7 +28,7 @@ export default function Landing() {
 
                 {/* content */}
                 <div className="col-span-5 flex flex-col gap-4 max-w-[70%] mt-20 text-white">
-                    <strong className="text-4xl font-black font-sans cursor-default">DONATE FOR THE BETTWEMENT OF SOCIETY</strong>
+                    <strong className="text-4xl font-black font-sans cursor-default">DONATE FOR THE BETTERMENT OF SOCIETY</strong>
                     <p className="text-lg opacity-60 cursor-default">
                         We are dedicated to help the society in every possible way. We are here to help you to help the society.
                     </p>
