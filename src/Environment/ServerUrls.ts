@@ -15,6 +15,9 @@ export const getResolvedCaseCountUrl: string = `${caseUrl}/GetResolvedCaseCount`
 // ? API endpoint to get verified cases List, it is a GET request
 export const getVerifiedCasesUrl: string = `${caseUrl}/GetAllVerifiedCases`;
 
+// ? API endpoint to get case by id, it is a GET request
+export const getCaseByIdUrl: string = `${caseUrl}/GetCaseById/`;
+
 // url for caseTranaction
 export const caseTransactionUrl: string = `${serverUrl}/CaseTransaction`;
 

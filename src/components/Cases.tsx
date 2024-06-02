@@ -49,7 +49,7 @@ export default function Cases() {
                 <div className="py-8 px-20 grid grid-cols-3 gap-4">
                     {/* cards goes here */}
                     {caseList.map((c, i) => (
-                        <div key={i} onClick={() => MoveToCaseDescription(1)} className="flex flex-col gap-4 h-[60vh] hover:shadow-none transition-shadow duration-300 shadow-lg shadow-slate-400">
+                        <div key={i} onClick={() => MoveToCaseDescription(c.caseId)} className="flex flex-col gap-4 h-[60vh] hover:shadow-none transition-shadow duration-300 shadow-lg shadow-slate-400">
 
                             {/* image */}
                             <span className="h-[60%] w-full bg-blue-500">

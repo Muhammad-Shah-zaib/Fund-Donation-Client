@@ -1,8 +1,23 @@
 import { NavLink, useParams } from "react-router-dom";
+import useCaseService from "../CustomHooks/useCaseService";
+import { useEffect, useState } from "react";
+import { CaseResponseDto } from "../Models/CaseResponseDto";
 
 export default function CaseDescription() {
+    // route hooks
     const params = useParams();
 
+    // custom Hooks
+    const {GetCaseById} = useCaseService(); 
+
+    // Hooks
+    const [activeCase, setActiveCase] = useState<CaseResponseDto>();
+
+    useEffect(() => {
+        console.log(params.id);
+        GetCaseById(setActiveCase, Number.parseInt(params.id!));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
     return (
         // Container for the whole page
         <div className='px-20 py-4 w-full'>
@@ -28,7 +43,7 @@ export default function CaseDescription() {
                         {/* header of content */}
                         <div className='w-full pb-8 border-b-2 border-slate-300'>
                             <span>
-                                <h1 className='text-3xl font-medium font-serif text-[#2E4049]'>Donation: 5,000 / 13,000 </h1>
+                                <h1 className='text-3xl font-medium font-serif text-[#2E4049]'>Donation: {activeCase?.collectedDonations} / {activeCase?.requiredDonations} </h1>
                             </span>
                         </div>
 
@@ -44,7 +59,7 @@ export default function CaseDescription() {
                             {/* description content */}
                                 <div>
                                     <span className='inline-block'>
-                                        <p className='opacity-70'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consectetur eveniet quis odit ut cum officiis natus molestiae nesciunt cupiditate iusto vitae harum autem facere at laborum, illo asperiores ratione nulla aspernatur, ea, quas ab. Aliquid, odio quisquam. Repellendus assumenda voluptatem in cum minus repudiandae magni exercitationem consequuntur. Repellendus error aperiam quibusdam, repudiandae ea voluptatem est minus sequi dicta similique amet laboriosam harum quia veniam ut tenetur non quis blanditiis qui placeat at eaque. Fuga itaque asperiores aliquam eos ab recusandae exercitationem veniam quam non omnis ullam eveniet, nulla cum deserunt ea aut natus. Tenetur autem ipsam officia exercitationem eos aperiam quod praesentium sint aspernatur. Nisi placeat excepturi repellendus fugiat sint maiores officia est ad adipisci, culpa provident, beatae a deserunt quae quaerat ut quasi laboriosam sed ea dolore pariatur accusantium. Voluptate eum sit libero porro pariatur hic quia cum vel saepe. Tempora fuga quaerat atque quam impedit repellendus dolores in omnis sed voluptatem, praesentium corporis ducimus voluptas similique sit possimus cum neque ipsam nulla excepturi alias quos deserunt magnam? Temporibus quisquam blanditiis nam quis facilis eos consequatur quod labore. Eveniet deleniti, accusamus repudiandae voluptatum voluptatem officia quis a hic sed corrupti natus, maxime perspiciatis tenetur dolorem laborum iure numquam esse?</p>
+                                        <p className='opacity-70'>{activeCase?.description}</p>
                                     </span>
                                 </div>
                             </section>
