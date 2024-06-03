@@ -13,7 +13,7 @@ export default class CaseService
 
     public GetAllVerifieddCases$(): Observable<CaseResponseListDto>{
         return ajax.getJSON<CaseResponseListDto>(getVerifiedCasesUrl)
-            .pipe();
+            .pipe(delay(200));
     }
 
     public GetCaseById$(id: number): Observable<CaseResponseDto>{

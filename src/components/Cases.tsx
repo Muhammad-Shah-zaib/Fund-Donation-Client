@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useCaseService from "../CustomHooks/useCaseService";
 import { CaseResponseListDto } from "../Models/CaseResponseDto";
+import { ClimbingBoxLoader } from "react-spinners";
 
 export default function Cases() {
     // using router hook to navigate programatically
@@ -14,7 +15,7 @@ export default function Cases() {
     const [caseList, setCaseList] = useState<CaseResponseListDto>([]);
     useEffect(() => {
         GetAllVerfiedCases(setCaseList);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     changeBodyBackground();
     // function to navigate to desired url
@@ -41,8 +42,14 @@ export default function Cases() {
 
                 </div>
             </header>
-
-
+            {!(caseList.length > 0) &&
+                <div className="relative">
+                    {/* Overlay */}
+                    <div className="absolute inset-0 flex h-[500px] items-center justify-center">
+                        <ClimbingBoxLoader color="#2563eb" size={20} />
+                    </div>
+                </div>
+            }
             {/* Caes Cards */}
             <main>
                 {/* container of cards with grid */}
@@ -58,7 +65,7 @@ export default function Cases() {
 
                             {/* content */}
                             <div className="flex px-1 flex-col justify-between min-h-[100px]">
-                                <span className="mt-4 text-center"><span className="text-base font-medium text-slate-800">{c.title}: </span> &nbsp;&nbsp;&nbsp;{c.description.substring(0,21)}...</span>
+                                <span className="mt-4 text-center"><span className="text-base font-medium text-slate-800">{c.title}: </span> &nbsp;&nbsp;&nbsp;{c.description.substring(0, 21)}...</span>
                                 <div className="flex gap-3 justify-between px-8">
                                     <span className="relative group">
                                         <button className="rounded-3xl bg-slate-200 hover:bg-slate-400 active:bg-slate-600 font-medium shadow-lg hover:shadow-none px-4 py-2 ">{c.collectedDonations} / {c.requiredDonations}</button>
