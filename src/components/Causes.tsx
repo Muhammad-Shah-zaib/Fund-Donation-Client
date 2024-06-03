@@ -49,7 +49,7 @@ export default function Causes() {
                 <div className="py-8 px-20 grid grid-cols-3 gap-4">
 
                     {causeList.map((c, i) => (
-                        <div key={i} onClick={() => MoveToCaseDescription(1)} className="flex flex-col gap-2 h-[70vh] hover:shadow-none transition-shadow duration-300 shadow-lg shadow-slate-400">
+                        <div key={i} onClick={() => MoveToCaseDescription(c.causeId)} className="flex flex-col gap-2 h-[70vh] hover:shadow-none transition-shadow duration-300 shadow-lg shadow-slate-400">
 
                             {/* image */}
                             <span className="h-[45%] w-full">
@@ -80,17 +80,6 @@ export default function Causes() {
                         </div>
                     ))}
                     {/* cards goes here */}
-
-
-
-
-
-
-
-
-
-
-
                     {/* END OF Main div container */}
                 </div>
             </main>

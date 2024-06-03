@@ -27,5 +27,8 @@ export const getTotalDonationsUrl: string = `${caseTransactionUrl}/GetTotalDonat
 // *url for causBank
 export const causeBankUrl: string = `${serverUrl}/CauseBank`;
 
-// ? API endpoint to get total causes, it is a GET request http://localhost:5036/CauseBank/GetAllCauses
+// ? API endpoint to get total causes, it is a GET request
 export const getAllCausesUrl: string = `${causeBankUrl}/GetAllCauses`;
+
+// ? API endpoint to get cause by id, it is a GET request http://localhost:5036/CauseBank/GetCauseById/2
+export const getCauseByIdUrl: string = `${causeBankUrl}/GetCauseById/`;
