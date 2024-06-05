@@ -5,9 +5,13 @@ export default function Navbar() {
 
     return (
         // constainer
-        <div className="z-10 bg-sky-950 flex justify-between px-16 py-4 text-slate-50">
+        <div className="relative z-10 bg-[#073863] flex justify-between px-16 py-4 text-slate-50">
             {/* left side ~ FOR LOGO */}
-            <div><strong>DUMMY LOGO</strong></div>
+            <div>
+                <div className="absolute top-0 left-20 w-[64px] h-[64px] overflow-hidden">
+                    <img src="logo.jpg" className=" pt-2 h-[50px]" alt="" />
+                </div>
+            </div>
 
             {/* right side ~ FOR NAVIGATION */}
             <div className="flex gap-8 items-center">
