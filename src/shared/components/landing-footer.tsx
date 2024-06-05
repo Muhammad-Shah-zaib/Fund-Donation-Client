@@ -1,4 +1,4 @@
-    import { useEffect, useState } from "react"
+    import { useLayoutEffect, useState } from "react"
     import useDonatorService from "../../CustomHooks/useDonatorService"
 import useCaseService from "../../CustomHooks/useCaseService";
 import useCaseTransactionService from "../../CustomHooks/useCaseTransactionService";
@@ -12,7 +12,7 @@ import useCaseTransactionService from "../../CustomHooks/useCaseTransactionServi
         const {GetDonatorCount} = useDonatorService();
         const {GetResolvedCaseCount} = useCaseService();
         const {GetTotalDonation} = useCaseTransactionService();
-        useEffect(() => {
+        useLayoutEffect(() => {
             GetDonatorCount(setDonatorCount);
             GetResolvedCaseCount(setResolvedCaseCount);
             GetTotalDonation(setTotalDonation);

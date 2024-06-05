@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import useCauseBankService from "../CustomHooks/useCauseBankService";
 import { useEffect, useState } from "react";
 import { CauseResponseListDto } from "../Models/CauseResponseDto";
+import { ClimbingBoxLoader } from "react-spinners";
 
 export default function Causes() {
     // router hooks
@@ -42,6 +43,15 @@ export default function Causes() {
                 </div>
             </header>
 
+            {/* loader */}
+            {!(causeList.length > 0) &&
+                <div className="relative">
+                    {/* Overlay */}
+                    <div className="absolute inset-0 flex h-[500px] items-center justify-center">
+                        <ClimbingBoxLoader color="#2563eb" size={20} />
+                    </div>
+                </div>
+            }
 
             {/* Caes Cards */}
             <main>
@@ -53,7 +63,7 @@ export default function Causes() {
 
                             {/* image */}
                             <span className="h-[45%] w-full">
-                                <img className="w-full h-full" src="https://papercrush.pk/wp-content/uploads/2019/07/IMG_0331-3-scaled.jpg" alt="no img" />
+                                <img className="w-full h-full" src="logo.jpg" alt="no img" />
                             </span>
 
                             {/* content */}

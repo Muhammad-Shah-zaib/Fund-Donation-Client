@@ -59,8 +59,8 @@ export default function Cases() {
                         <div key={i} onClick={() => MoveToCaseDescription(c.caseId)} className="flex flex-col gap-4 h-[60vh] hover:shadow-none transition-shadow duration-300 shadow-lg shadow-slate-400">
 
                             {/* image */}
-                            <span className="h-[60%] w-full bg-blue-500">
-                                <img src="" alt="" />
+                            <span className="h-[60%] w-full">
+                                <img src="logo.jpg" className="w-full h-full" alt="" />
                             </span>
 
                             {/* content */}

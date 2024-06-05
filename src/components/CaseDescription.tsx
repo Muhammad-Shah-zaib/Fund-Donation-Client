@@ -1,6 +1,6 @@
 import { NavLink, useParams } from "react-router-dom";
 import useCaseService from "../CustomHooks/useCaseService";
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { CaseResponseDto } from "../Models/CaseResponseDto";
 
 export default function CaseDescription() {
@@ -13,7 +13,7 @@ export default function CaseDescription() {
     // Hooks
     const [activeCase, setActiveCase] = useState<CaseResponseDto>();
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         console.log(params.id);
         GetCaseById(setActiveCase, Number.parseInt(params.id!));
     // eslint-disable-next-line react-hooks/exhaustive-deps
