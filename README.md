@@ -7,10 +7,7 @@ NFRW-Client is a web client for the NUST Fund Raising Web (NFRW) platform. This 
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+- [Contributors](#contributors)
 
 ## Features
 
