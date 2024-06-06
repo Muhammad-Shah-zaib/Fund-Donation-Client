@@ -13,10 +13,7 @@ NFRW-Client is a web client for the NUST Fund Raising Web (NFRW) platform. This 
 
 - **Browse Causes:** View a list of current fundraising campaigns.
 - **Donate:** Contribute to the causes that resonate with you.
-- **User Authentication:** Secure login and registration for donors.
-- **Payment Integration:** Easy and secure payment options.
 - **Campaign Details:** Detailed view of each fundraising campaign.
-- **Donation History:** Track your donation history and see the impact you've made.
 - **Loading Spinners:** Visual feedback during data loading with React Spinner.
 
 ## Tech Stack
